@@ -248,6 +248,12 @@ function detectColorScheme() {
       : 'assets/img/programmer-light.png'
   )
 
+  localStorage.setItem('selected-theme', theme)
+  localStorage.setItem(
+    'selected-icon',
+    theme === 'dark' ? 'uil-moon' : 'uil-sun'
+  )
+
   if (
     theme === 'dark' &&
     localStorage.getItem('selected-icon') === 'uil-moon'
@@ -259,12 +265,6 @@ function detectColorScheme() {
   ) {
     themeButton.classList.toggle(iconTheme)
   }
-
-  localStorage.setItem('selected-theme', theme)
-  localStorage.setItem(
-    'selected-icon',
-    theme === 'dark' ? 'uil-moon' : 'uil-sun'
-  )
 
   window
     .matchMedia('(prefers-color-scheme: light)')
