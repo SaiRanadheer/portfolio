@@ -273,3 +273,24 @@ function detectColorScheme() {
     })
 }
 detectColorScheme()
+
+let contactMeForm = document.getElementById("contactMeForm");
+
+contactMeForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const name = contactMeForm.elements['name'].value;
+  const email = contactMeForm.elements['email'].value;
+  const jobDesc = contactMeForm.elements['jobDesc'].value;
+  const message = contactMeForm.elements['message'].value;
+  let messageText = `Hi, I'm ${name} and my email address is ${email}.`
+  if(jobDesc) {
+     messageText += ` I would like to discuss with you regarding a job offer and it's details are as follows:\n ${jobDesc}.`;
+  }
+  if(message) {
+    messageText+= `\n Also, please find my comments as follows: \n ${message}`;
+  }
+
+  const encodedText = encodeURIComponent(messageText)
+  const url = "https://wa.me/+919963846167?text=" + encodedText;
+  window.open(url, '_blank')
+})

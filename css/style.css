@@ -488,10 +488,6 @@ img {
   margin-right: var(--mb-0-75);
 }
 
-.skills__title {
-  font-size: var(--h3-font-size);
-}
-
 .skills__subtitle {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
@@ -511,6 +507,11 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--mb-0-5);
+  font-size: var(--h3-font-size);
+}
+
+.skills__title:hover {
+  color: var(--first-color-alt);
 }
 
 .skills__name {
@@ -542,27 +543,35 @@ img {
 }
 
 .skills__js {
-  width: 60%;
+  width: 80%;
 }
 
 .skills__react {
-  width: 85%;
+  width: 75%;
 }
 
-.skills__php {
+.skills__ts {
+  width: 50%;
+}
+
+.skills__express {
   width: 80%;
 }
 
 .skills__node {
-  width: 70%;
+  width: 80%;
+}
+
+.skills__sql {
+  width: 75%;
+}
+
+.skills__mongo {
+  width: 75%;
 }
 
 .skills__firebase {
-  width: 90%;
-}
-
-.skills__python {
-  width: 55%;
+  width: 70%;
 }
 
 .skills__java {
@@ -574,11 +583,11 @@ img {
 }
 
 .skills__azure {
-  width: 90%;
+  width: 60%;
 }
 
 .skills__aws {
-  width: 80%;
+  width: 40%;
 }
 
 .skills__closed .skills__list {
@@ -779,6 +788,9 @@ img {
   width: 265px;
   border-radius: 0.5rem;
   justify-self: center;
+  background-image: url('https://via.placeholder.com/265x136?text=Image+Unavailable');
+  height: 100%;
+  min-height: 136px;
 }
 
 .portfolio__title {
@@ -1260,6 +1272,9 @@ img {
 
   .portfolio__img {
     width: 320px;
+    height: 100%;
+    min-height: 100px;
+    background-image: url('https://via.placeholder.com/320x136?text=Image+Unavailable');
   }
 
   .portfolio__content {
