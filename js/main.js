@@ -179,7 +179,8 @@ window.addEventListener('scroll', scrollUp)
 /* --------------- Dark Light Theme --------------- */
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
+const lightIconTheme = 'uil-sun'
+const darkIconTheme = 'uil-moon'
 const programmerImage = document.querySelector('image')
 
 //already selected theme
@@ -190,7 +191,7 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+  themeButton.classList.contains(lightIconTheme) ? 'uil-moon' : 'uil-sun'
 
 // Vaidate if theme is previously chosen
 if (selectedTheme) {
@@ -198,8 +199,12 @@ if (selectedTheme) {
     darkTheme
   )
   themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](
-    iconTheme
+    lightIconTheme
   )
+  themeButton.classList[selectedIcon === 'uil-sun' ? 'add' : 'remove'](
+    darkIconTheme
+  )
+
   if (selectedTheme === 'dark') {
     programmerImage.setAttribute('href', 'assets/img/programmer-dark.png')
   } else {
@@ -210,7 +215,8 @@ if (selectedTheme) {
 //Activate/decativate dark theme manually
 themeButton.addEventListener('click', () => {
   document.body.classList.toggle(darkTheme)
-  themeButton.classList.toggle(iconTheme)
+  themeButton.classList.toggle(lightIconTheme)
+  themeButton.classList.toggle(darkIconTheme)
 
   localStorage.setItem('selected-theme', getCurrentTheme())
   localStorage.setItem('selected-icon', getCurrentIcon())
@@ -254,16 +260,12 @@ function detectColorScheme() {
     theme === 'dark' ? 'uil-moon' : 'uil-sun'
   )
 
-  if (
-    theme === 'dark' &&
-    localStorage.getItem('selected-icon') === 'uil-moon'
-  ) {
-    themeButton.classList.toggle(iconTheme)
-  } else if (
-    theme === 'light' &&
-    localStorage.getItem('selected-icon') === 'uil-sun'
-  ) {
-    themeButton.classList.toggle(iconTheme)
+  if (theme === 'dark') {
+    themeButton.classList.add('uil-sun')
+    themeButton.classList.remove('uil-moon')
+  } else if (theme === 'light') {
+    themeButton.classList.add('uil-moon')
+    themeButton.classList.remove('uil-sun')
   }
 
   window
