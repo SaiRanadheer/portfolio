@@ -881,6 +881,10 @@ img {
   margin-right: var(--mb-0-75);
 }
 
+.testimonial__user {
+  display: inline-block;
+}
+
 .testimonial__name {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
@@ -895,7 +899,7 @@ img {
   margin-bottom: var(--mb-2-5);
 }
 
-.testimonial__icon-star {
+.testimonial--stars > span {
   color: var(--first-color);
 }
 
@@ -991,13 +995,6 @@ img {
 
 .footer__social:hover {
   color: var(--first-color-lighter);
-}
-
-.footer__copy {
-  font-size: var(--smaller-font-size);
-  text-align: center;
-  color: var(--text-color-light);
-  margin-top: var(--mb-3);
 }
 
 .footer__title,
@@ -1315,10 +1312,6 @@ img {
 
   .footer__socials {
     justify-self: flex-end;
-  }
-
-  .footer__copy {
-    margin-top: 4.5rem;
   }
 }
 
